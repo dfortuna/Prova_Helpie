@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		36A1D95725487BCB00A3ACA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D95625487BCB00A3ACA2 /* AppDelegate.swift */; };
 		36A1D95925487BCB00A3ACA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D95825487BCB00A3ACA2 /* SceneDelegate.swift */; };
-		36A1D95B25487BCB00A3ACA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D95A25487BCB00A3ACA2 /* ViewController.swift */; };
+		36A1D95B25487BCB00A3ACA2 /* ContactsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D95A25487BCB00A3ACA2 /* ContactsListTableViewController.swift */; };
 		36A1D96025487BD000A3ACA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A1D95F25487BD000A3ACA2 /* Assets.xcassets */; };
 		36A1D96325487BD000A3ACA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A1D96125487BD000A3ACA2 /* LaunchScreen.storyboard */; };
 		36A1D96E25487BD000A3ACA2 /* Prova_HelpieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D96D25487BD000A3ACA2 /* Prova_HelpieTests.swift */; };
 		36A1D97925487BD000A3ACA2 /* Prova_HelpieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D97825487BD000A3ACA2 /* Prova_HelpieUITests.swift */; };
+		36A1D9882548B6F700A3ACA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9872548B6F700A3ACA2 /* User.swift */; };
+		36A1D98A2548B91800A3ACA2 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9892548B91800A3ACA2 /* UIView + Extensions.swift */; };
+		36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D98E2549CE8300A3ACA2 /* LoggedUserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 		36A1D95325487BCB00A3ACA2 /* Prova_Helpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prova_Helpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A1D95625487BCB00A3ACA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36A1D95825487BCB00A3ACA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		36A1D95A25487BCB00A3ACA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		36A1D95A25487BCB00A3ACA2 /* ContactsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListTableViewController.swift; sourceTree = "<group>"; };
 		36A1D95F25487BD000A3ACA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36A1D96225487BD000A3ACA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36A1D96425487BD000A3ACA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		36A1D97425487BD000A3ACA2 /* Prova_HelpieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Prova_HelpieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A1D97825487BD000A3ACA2 /* Prova_HelpieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prova_HelpieUITests.swift; sourceTree = "<group>"; };
 		36A1D97A25487BD000A3ACA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A1D9872548B6F700A3ACA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		36A1D9892548B91800A3ACA2 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		36A1D98E2549CE8300A3ACA2 /* LoggedUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +103,10 @@
 		36A1D95525487BCB00A3ACA2 /* Prova_Helpie */ = {
 			isa = PBXGroup;
 			children = (
-				36A1D95625487BCB00A3ACA2 /* AppDelegate.swift */,
-				36A1D95825487BCB00A3ACA2 /* SceneDelegate.swift */,
-				36A1D95A25487BCB00A3ACA2 /* ViewController.swift */,
-				36A1D95F25487BD000A3ACA2 /* Assets.xcassets */,
-				36A1D96125487BD000A3ACA2 /* LaunchScreen.storyboard */,
-				36A1D96425487BD000A3ACA2 /* Info.plist */,
+				36A1D98D2548B96100A3ACA2 /* Extensions */,
+				36A1D98C2548B95600A3ACA2 /* Models */,
+				36A1D98B2548B94C00A3ACA2 /* Contacts LIst */,
+				36A1D9862548B56000A3ACA2 /* Supporting Files */,
 			);
 			path = Prova_Helpie;
 			sourceTree = "<group>";
@@ -123,6 +127,43 @@
 				36A1D97A25487BD000A3ACA2 /* Info.plist */,
 			);
 			path = Prova_HelpieUITests;
+			sourceTree = "<group>";
+		};
+		36A1D9862548B56000A3ACA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D95625487BCB00A3ACA2 /* AppDelegate.swift */,
+				36A1D95825487BCB00A3ACA2 /* SceneDelegate.swift */,
+				36A1D95F25487BD000A3ACA2 /* Assets.xcassets */,
+				36A1D96125487BD000A3ACA2 /* LaunchScreen.storyboard */,
+				36A1D96425487BD000A3ACA2 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36A1D98B2548B94C00A3ACA2 /* Contacts LIst */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D95A25487BCB00A3ACA2 /* ContactsListTableViewController.swift */,
+				36A1D98E2549CE8300A3ACA2 /* LoggedUserTableViewCell.swift */,
+			);
+			path = "Contacts LIst";
+			sourceTree = "<group>";
+		};
+		36A1D98C2548B95600A3ACA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D9872548B6F700A3ACA2 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36A1D98D2548B96100A3ACA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D9892548B91800A3ACA2 /* UIView + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36A1D95B25487BCB00A3ACA2 /* ViewController.swift in Sources */,
+				36A1D98A2548B91800A3ACA2 /* UIView + Extensions.swift in Sources */,
+				36A1D9882548B6F700A3ACA2 /* User.swift in Sources */,
+				36A1D95B25487BCB00A3ACA2 /* ContactsListTableViewController.swift in Sources */,
 				36A1D95725487BCB00A3ACA2 /* AppDelegate.swift in Sources */,
+				36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */,
 				36A1D95925487BCB00A3ACA2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47SHVH7P47;
-				INFOPLIST_FILE = Prova_Helpie/Info.plist;
+				INFOPLIST_FILE = "Prova_Helpie/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47SHVH7P47;
-				INFOPLIST_FILE = Prova_Helpie/Info.plist;
+				INFOPLIST_FILE = "Prova_Helpie/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
