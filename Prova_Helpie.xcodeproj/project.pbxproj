@@ -17,6 +17,8 @@
 		36A1D9882548B6F700A3ACA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9872548B6F700A3ACA2 /* User.swift */; };
 		36A1D98A2548B91800A3ACA2 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9892548B91800A3ACA2 /* UIView + Extensions.swift */; };
 		36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D98E2549CE8300A3ACA2 /* LoggedUserTableViewCell.swift */; };
+		36A1D991254A124400A3ACA2 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D990254A124400A3ACA2 /* ContactTableViewCell.swift */; };
+		36A1D993254A1DC400A3ACA2 /* FakeUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		36A1D9872548B6F700A3ACA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		36A1D9892548B91800A3ACA2 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		36A1D98E2549CE8300A3ACA2 /* LoggedUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUserTableViewCell.swift; sourceTree = "<group>"; };
+		36A1D990254A124400A3ACA2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUsers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				36A1D98C2548B95600A3ACA2 /* Models */,
 				36A1D98B2548B94C00A3ACA2 /* Contacts LIst */,
 				36A1D9862548B56000A3ACA2 /* Supporting Files */,
+				36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */,
 			);
 			path = Prova_Helpie;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				36A1D95A25487BCB00A3ACA2 /* ContactsListTableViewController.swift */,
 				36A1D98E2549CE8300A3ACA2 /* LoggedUserTableViewCell.swift */,
+				36A1D990254A124400A3ACA2 /* ContactTableViewCell.swift */,
 			);
 			path = "Contacts LIst";
 			sourceTree = "<group>";
@@ -299,7 +305,9 @@
 				36A1D98A2548B91800A3ACA2 /* UIView + Extensions.swift in Sources */,
 				36A1D9882548B6F700A3ACA2 /* User.swift in Sources */,
 				36A1D95B25487BCB00A3ACA2 /* ContactsListTableViewController.swift in Sources */,
+				36A1D993254A1DC400A3ACA2 /* FakeUsers.swift in Sources */,
 				36A1D95725487BCB00A3ACA2 /* AppDelegate.swift in Sources */,
+				36A1D991254A124400A3ACA2 /* ContactTableViewCell.swift in Sources */,
 				36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */,
 				36A1D95925487BCB00A3ACA2 /* SceneDelegate.swift in Sources */,
 			);

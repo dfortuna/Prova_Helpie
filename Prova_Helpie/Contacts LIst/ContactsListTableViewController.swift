@@ -15,8 +15,14 @@ class ContactsListTableViewController: UIViewController {
     fileprivate var loggedUserPhoto = UIImageView()
     fileprivate var loggedUserNameLabel = UILabel()
     fileprivate var tableView = UITableView()
+    
+    fileprivate let cellIdLoggedUser = "LoggedUserCell"
+    fileprivate let cellIdContact = "ContactCell"
+    
+    
     fileprivate var contacts = [User]()
-    fileprivate let cellId = "ContactCell"
+    fileprivate var groupedContacts = [String: [User]]()
+    fileprivate var sectionTitles = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,11 @@ class ContactsListTableViewController: UIViewController {
         self.title = "Contacts"
         configureTableView()
         setAddContactButton()
+        configureSearchController()
+        
+        //tirar
+        loggedUser = User(name: "Denis Fortuna", phoneNumber: "9999-1234",
+                          photoURL: "www.denisfortuna.com", comments: "battery about to dye!")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +51,8 @@ class ContactsListTableViewController: UIViewController {
                               padding: .init(top: 12, left: 0, bottom: -12, right: 0))
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(LoggedUserTableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(LoggedUserTableViewCell.self, forCellReuseIdentifier: cellIdLoggedUser)
+        tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellIdContact)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
@@ -53,8 +65,27 @@ class ContactsListTableViewController: UIViewController {
         
     }
     
+    fileprivate func configureSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
     fileprivate func fetchData() {
+        contacts = FakeUsers.getUsers()
+        sortFormatResults()
         tableView.reloadData()
+    }
+    
+    fileprivate func sortFormatResults() {
+        groupedContacts = Dictionary(grouping: contacts, by: {String($0.name.prefix(1))})
+        guard let user = loggedUser else { return }
+        groupedContacts[""] = [user]
+        sectionTitles  = groupedContacts.map{ $0.key}.sorted(by: {$0 < $1 })
+
+        
     }
 
 }
@@ -66,15 +97,34 @@ extension ContactsListTableViewController: UITableViewDelegate {
 }
 
 extension ContactsListTableViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        sectionTitles.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        contacts.count
-        5
+        let sectionTitle = sectionTitles[section]
+        guard let sectionUsers = groupedContacts[sectionTitle] else { return 0 }
+        return sectionUsers.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sectionTitles[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? LoggedUserTableViewCell else { return UITableViewCell() }
-        cell.formatUI(forContactName: "Denis Fortuna Denis Fortuna", andPhoto: "")
-        return cell
+        switch indexPath.section {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdLoggedUser) as? LoggedUserTableViewCell else { return UITableViewCell() }
+            guard let lUser = loggedUser else { return UITableViewCell() }
+            cell.formatUI(forUser: lUser)
+            return cell
+        default:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdContact) as? ContactTableViewCell else { return UITableViewCell() }
+            let section = sectionTitles[indexPath.section]
+            guard let user = groupedContacts[section]?[indexPath.row] else { return UITableViewCell() }
+            cell.formatUI(forContact: user)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -82,3 +132,8 @@ extension ContactsListTableViewController: UITableViewDataSource {
     }
 }
 
+extension ContactsListTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+}

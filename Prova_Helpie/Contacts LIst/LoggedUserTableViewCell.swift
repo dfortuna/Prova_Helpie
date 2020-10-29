@@ -13,12 +13,14 @@ class LoggedUserTableViewCell: UITableViewCell {
     fileprivate var contactName = UILabel()
     fileprivate var messageLabel = UILabel()
     fileprivate var contactPhoto = UIImageView()
+    fileprivate var loggedUser: User?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         configureContactPhoto()
         configureContactNameLabel()
+        configurePersonalMessage()
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +45,7 @@ class LoggedUserTableViewCell: UITableViewCell {
     
     fileprivate func configureContactNameLabel() {
         self.addSubview(contactName)
-        contactName.font = UIFont.boldSystemFont(ofSize: 18)
+        contactName.font = UIFont.boldSystemFont(ofSize: 20)
         contactName.numberOfLines = 0
 
         contactName.anchorEdges(top: self.topAnchor,
@@ -55,9 +57,9 @@ class LoggedUserTableViewCell: UITableViewCell {
     
     fileprivate func configurePersonalMessage() {
         self.addSubview(messageLabel)
-        messageLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        messageLabel.font = UIFont.italicSystemFont(ofSize: 16)
+        messageLabel.textColor = .lightGray
         messageLabel.numberOfLines = 1
-
         messageLabel.anchorEdges(top: contactName.bottomAnchor,
                                left: contactPhoto.rightAnchor,
                                right: self.rightAnchor,
@@ -66,12 +68,9 @@ class LoggedUserTableViewCell: UITableViewCell {
         
     }
     
-    func formatUI(forContactName name: String, andPhoto photo: String) {
-        contactName.text = name
-        messageLabel.text = "battery about to dye"
+    func formatUI(forUser user: User) {
+        loggedUser = user
+        contactName.text = user.name
+        messageLabel.text = user.comments
     }
-    
-    
-
-
 }
