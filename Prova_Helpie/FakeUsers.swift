@@ -40,10 +40,15 @@ struct FakeUsers {
             let number = "\(prefixNumber)-\(sufixNumber)"
             
             let url = "www.\(name).com.br"
+            let email = "\(name)@gmail.com"
             
             let comments = name + name + name + name
             
-            var user = User(name: name, phoneNumber: number, photoURL: url, comments: comments)
+            let user = User(name: name,
+                            phoneNumber: number,
+                            photoURL: url,
+                            comments: comments,
+                            email: email)
             users.append(user)
         }
         return users

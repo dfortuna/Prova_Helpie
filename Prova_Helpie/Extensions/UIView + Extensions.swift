@@ -50,5 +50,12 @@ extension UIView {
             self.centerYAnchor.constraint(equalTo: centerY).isActive = true
         }
     }
+    
+    func addBorderToBottom() {
+        let lineView = UIView()
+        self.addSubview(lineView)
+        lineView.backgroundColor = .lightGray
+        lineView.anchorSizes(sizeWidth: self.bounds.width, sizeHeight: 1)
+        lineView.anchorEdges(top: nil, left: self.leftAnchor, right: self.rightAnchor, bottom: self.bottomAnchor, padding: .init(top: 0, left: 0, bottom: 8, right: 0))
+    }
 }
-

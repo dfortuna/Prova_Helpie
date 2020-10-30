@@ -13,4 +13,5 @@ struct User: Hashable {
     var phoneNumber: String
     var photoURL: String
     var comments: String
+    var email: String
 }

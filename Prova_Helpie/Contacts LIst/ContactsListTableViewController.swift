@@ -12,8 +12,6 @@ class ContactsListTableViewController: UIViewController {
     
     var loggedUser: User?
     
-    fileprivate var loggedUserPhoto = UIImageView()
-    fileprivate var loggedUserNameLabel = UILabel()
     fileprivate var tableView = UITableView()
     fileprivate let backgroundView = UIView()
     
@@ -36,12 +34,14 @@ class ContactsListTableViewController: UIViewController {
         configureSearchController()
         
         //tirar
-        loggedUser = User(name: "Denis Fortuna", phoneNumber: "9999-1234",
-                          photoURL: "www.denisfortuna.com", comments: "battery about to dye!")
+        loggedUser = User(name: "Denis Fortuna",
+                          phoneNumber: "9999-1234",
+                          photoURL: "www.denisfortuna.com",
+                          comments: "battery about to dye!",
+                          email: "denis.fortuna@gmail.com")
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        loggedUserNameLabel.text = "Denis"
         fetchData()
     }
     
@@ -65,7 +65,10 @@ class ContactsListTableViewController: UIViewController {
     }
     
     @objc fileprivate func presentAddContactViewController() {
-        
+        let contactDetailVC = ContactDetailViewController()
+        let sortNavigationController = UINavigationController()
+        sortNavigationController.viewControllers = [contactDetailVC]
+        self.present(sortNavigationController, animated: true, completion: nil)
     }
     
     fileprivate func configureSearchController() {
@@ -203,7 +206,6 @@ extension ContactsListTableViewController: UISearchResultsUpdating {
             //when typing..either with or without results to show
             filteredContacts = contacts.filter{ $0.name.prefix(searchingText.count) == searchingText}
                 .sorted(by: { $0.name < $1.name })
-            
             isSearching = true
         }
         formatResultData()
