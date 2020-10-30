@@ -47,8 +47,6 @@ class ContactDetailViewController: UIViewController {
         view.addSubview(userPhoto)
         userPhoto.backgroundColor = .lightGray
         userPhoto.layer.cornerRadius = 65
-        userPhoto.layer.borderColor = UIColor.blue.cgColor
-        userPhoto.layer.borderWidth = 5
         userPhoto.contentMode = .scaleAspectFill
         userPhoto.clipsToBounds = true
         userPhoto.anchorSizes(sizeWidth: 130, sizeHeight: 130)
@@ -56,7 +54,7 @@ class ContactDetailViewController: UIViewController {
                                  left: nil,
                                  right: nil,
                                  bottom: nil,
-                                 padding: .init(top: 40, left: 0, bottom: 0, right: 0))
+                                 padding: .init(top: 10, left: 0, bottom: 0, right: 0))
         userPhoto.anchorCenters(centerX: view.centerXAnchor, centerY: nil)
     }
     
@@ -68,7 +66,8 @@ class ContactDetailViewController: UIViewController {
                              left: self.view.safeAreaLayoutGuide.leftAnchor,
                              right: self.view.safeAreaLayoutGuide.rightAnchor,
                              bottom: nil,
-                             padding: .init(top: 30, left: 12, bottom: 0, right: -12))
+                             padding: .init(top: 25, left: 12, bottom: 0, right: -12))
+        userName.backgroundColor = .yellow
         userName.forTitle("Name")
         userName.addBorderToBottom()
     }

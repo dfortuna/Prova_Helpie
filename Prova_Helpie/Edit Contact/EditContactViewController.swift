@@ -53,8 +53,6 @@ class EditContactViewController: UIViewController {
         view.addSubview(userPhoto)
         userPhoto.backgroundColor = .lightGray
         userPhoto.layer.cornerRadius = 65
-        userPhoto.layer.borderColor = UIColor.blue.cgColor
-        userPhoto.layer.borderWidth = 5
         userPhoto.contentMode = .scaleAspectFill
         userPhoto.clipsToBounds = true
         userPhoto.anchorSizes(sizeWidth: 130, sizeHeight: 130)
@@ -62,7 +60,7 @@ class EditContactViewController: UIViewController {
                                  left: nil,
                                  right: nil,
                                  bottom: nil,
-                                 padding: .init(top: 40, left: 0, bottom: 0, right: 0))
+                                 padding: .init(top: 10, left: 0, bottom: 0, right: 0))
         userPhoto.anchorCenters(centerX: view.centerXAnchor, centerY: nil)
     }
     
@@ -76,6 +74,15 @@ class EditContactViewController: UIViewController {
                                       padding: .init(top: 8, left: 0, bottom: 0, right: 0))
         changePhotoBottom.anchorCenters(centerX: userPhoto.centerXAnchor, centerY: nil)
         changePhotoBottom.setTitleColor(.systemBlue, for: .normal)
+        changePhotoBottom.addTarget(self, action: #selector(selectPhoto), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func selectPhoto() {
+        let myPickerController = UIImagePickerController()
+        myPickerController.delegate = self
+        myPickerController.sourceType = .photoLibrary
+        myPickerController.allowsEditing = true
+        self.present(myPickerController, animated: true, completion: nil)
     }
     
     fileprivate func configureUserName() {
@@ -158,5 +165,16 @@ extension EditContactViewController: UITextViewDelegate {
         } else if comments.text.starts(with: "Notes") {
             comments.text = textView.text.components(separatedBy: "Notes")[1]
         }
+    }
+}
+
+extension EditContactViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            userPhoto.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userPhoto.image = originalImage
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
