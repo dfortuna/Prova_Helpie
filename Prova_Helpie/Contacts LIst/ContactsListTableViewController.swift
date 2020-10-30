@@ -28,7 +28,7 @@ class ContactsListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.title = "📞 Contacts"
+        self.title = "Contacts"
         configureTableView()
         setAddContactButton()
         configureSearchController()
@@ -65,10 +65,12 @@ class ContactsListTableViewController: UIViewController {
     }
     
     @objc fileprivate func presentAddContactViewController() {
-        let contactDetailVC = ContactDetailViewController()
-        let sortNavigationController = UINavigationController()
-        sortNavigationController.viewControllers = [contactDetailVC]
-        self.present(sortNavigationController, animated: true, completion: nil)
+        let newContactVC = EditContactViewController()
+        newContactVC.formatUI(forUser: nil)
+        
+        let newContactNavigationController = UINavigationController()
+        newContactNavigationController.viewControllers = [newContactVC]
+        self.present(newContactNavigationController, animated: true, completion: nil)
     }
     
     fileprivate func configureSearchController() {
@@ -135,7 +137,23 @@ class ContactsListTableViewController: UIViewController {
 
 extension ContactsListTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        var selectedUser: User!
+        if isSearching {
+            selectedUser = filteredContacts[indexPath.row]
+
+        } else {
+
+            //remove logged user from groupedContacts
+            groupedContacts[""] = nil
+            //look for section
+            let section = sectionTitles[indexPath.section]
+            //look for user in section
+            guard let user = groupedContacts[section]?[indexPath.row] else { return }
+            selectedUser = user
+        }
+        let detailVC = ContactDetailViewController()
+        detailVC.formatUI(forUser: selectedUser)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
