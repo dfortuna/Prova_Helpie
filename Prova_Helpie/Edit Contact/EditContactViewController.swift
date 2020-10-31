@@ -9,13 +9,17 @@
 import UIKit
 
 class EditContactViewController: UIViewController {
-
+    
+    var userToEdit: User?
+    fileprivate var photoURL: String? = ""
     fileprivate var userPhoto = UIImageView()
     fileprivate var changePhotoBottom = UIButton()
     fileprivate var userName = UITextField()
     fileprivate var userPhoneNumber = UITextField()
     fileprivate var userEmail = UITextField()
     fileprivate var comments = UITextView()
+    
+    fileprivate let realmService = RealmService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,23 @@ class EditContactViewController: UIViewController {
         configurePhoneNumber()
         configureUserEmail()
         configureNotes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        formatUI()
+    }
+    
+    fileprivate func formatUI() {
+        if let user = userToEdit {
+            self.title = "Edit Contact"
+            userName.text = user.name
+            userPhoneNumber.text = user.phoneNumber
+            userEmail.text = user.email
+            comments.text = user.comments
+        } else {
+            self.title = "New Contact"
+            userPhoto.image = UIImage(systemName: "photo")
+        }
     }
     
     fileprivate func setCancelLeftButton() {
@@ -45,7 +66,33 @@ class EditContactViewController: UIViewController {
     }
     
     @objc fileprivate func updateDataBaseViewController() {
-        // TODO: update database
+
+        guard let uName = userName.text,
+              let uPhone = userPhoneNumber.text,
+              let uEmail = userEmail.text,
+              let uphoto = photoURL else {
+              // TODO: add alert(Fill all fields)
+              return
+        }
+        
+        if let editedUser = userToEdit {
+            //edit user data
+            let userData: [String: Any?] = ["name": uName,
+                                            "phoneNumber": uPhone,
+                                            "photoURL": uphoto,
+                                            "comments": comments.text,
+                                            "email": uEmail]
+            realmService.update(editedUser, with: userData)
+        } else {
+            //format new user
+            let newUser = User(name: uName,
+                               phoneNumber: uPhone,
+                               photoUrl: uphoto,
+                               comments: comments.text,
+                               email: uEmail)
+            realmService.addObject(newUser)
+        }
+        // TODO: Alert(success)
         dismissViewController()
     }
     
@@ -137,19 +184,6 @@ class EditContactViewController: UIViewController {
         comments.textColor = .systemGray3
         comments.backgroundColor = .systemGray5
         comments.text = "Notes"
-    }
-    
-    func formatUI(forUser user: User?) {
-        if let user = user {
-            userName.text = user.name
-            userPhoneNumber.text = user.phoneNumber
-            userEmail.text = user.email
-            comments.text = user.comments
-            self.title = "Edit Contact"
-        } else {
-            self.title = "New Contact"
-            userPhoto.image = UIImage(systemName: "photo")
-        }
     }
 }
 

@@ -7,11 +7,27 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct User: Hashable {
-    var name: String
-    var phoneNumber: String
-    var photoURL: String
-    var comments: String
-    var email: String
+@objcMembers class User: Object {
+    dynamic var id = ""
+    dynamic var name = ""
+    dynamic var phoneNumber = ""
+    dynamic var photoURL = ""
+    dynamic var comments = ""
+    dynamic var email = ""
+
+    override class func primaryKey() -> String? {
+        "id"
+    }
+    
+    convenience init(name: String, phoneNumber: String, photoUrl: String, comments: String, email: String){
+        self.init()
+        self.id = UUID().uuidString
+        self.name = name
+        self.phoneNumber = phoneNumber
+        self.photoURL = photoUrl
+        self.comments = comments
+        self.email = email
+    }
 }

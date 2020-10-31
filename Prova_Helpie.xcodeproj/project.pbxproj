@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,11 @@
 		36A1D99A254B8F9400A3ACA2 /* UITextView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D999254B8F9400A3ACA2 /* UITextView + Extensions.swift */; };
 		36A1D99C254BE83300A3ACA2 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D99B254BE83300A3ACA2 /* ContactDetailViewController.swift */; };
 		36A1D99F254BF8B400A3ACA2 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D99E254BF8B400A3ACA2 /* UILabel + Extensions.swift */; };
+		36A1D9A1254CBEEF00A3ACA2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A0254CBEEE00A3ACA2 /* RealmService.swift */; };
+		36A1D9A3254CBF5300A3ACA2 /* RealmCollectionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A2254CBF5300A3ACA2 /* RealmCollectionTypes.swift */; };
+		44AD6AEB93FFC7BA2DF06B38 /* Pods_Prova_HelpieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38BC30A2AE3ABFE465DECDD /* Pods_Prova_HelpieTests.framework */; };
+		A1AC234580A50D7815E0CC78 /* Pods_Prova_Helpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E403BB8A4A0C6F36F86CDB27 /* Pods_Prova_Helpie.framework */; };
+		D3397E96573865CF54D3C5AE /* Pods_Prova_Helpie_Prova_HelpieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EBB57F2CE19705E735D448 /* Pods_Prova_Helpie_Prova_HelpieUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1995EF0CE2A3FD372D43A77A /* Pods-Prova_HelpieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_HelpieTests.release.xcconfig"; path = "Target Support Files/Pods-Prova_HelpieTests/Pods-Prova_HelpieTests.release.xcconfig"; sourceTree = "<group>"; };
 		36A1D95325487BCB00A3ACA2 /* Prova_Helpie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prova_Helpie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A1D95625487BCB00A3ACA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36A1D95825487BCB00A3ACA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +71,16 @@
 		36A1D999254B8F9400A3ACA2 /* UITextView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView + Extensions.swift"; sourceTree = "<group>"; };
 		36A1D99B254BE83300A3ACA2 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		36A1D99E254BF8B400A3ACA2 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		36A1D9A0254CBEEE00A3ACA2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		36A1D9A2254CBF5300A3ACA2 /* RealmCollectionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCollectionTypes.swift; sourceTree = "<group>"; };
+		42B7D43643E5119F44FC18DC /* Pods-Prova_Helpie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie.release.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie.release.xcconfig"; sourceTree = "<group>"; };
+		688DB972BFC192AD4A4289A7 /* Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6C45FC3CD9605D5D90ABC0F7 /* Pods-Prova_Helpie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie.debug.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie.debug.xcconfig"; sourceTree = "<group>"; };
+		A38BC30A2AE3ABFE465DECDD /* Pods_Prova_HelpieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prova_HelpieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01AE480D16B0674650AE27D /* Pods-Prova_HelpieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_HelpieTests.debug.xcconfig"; path = "Target Support Files/Pods-Prova_HelpieTests/Pods-Prova_HelpieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D535849118B0DD435B7EB6D1 /* Pods-Prova_Helpie-Prova_HelpieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie-Prova_HelpieUITests.debug.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E403BB8A4A0C6F36F86CDB27 /* Pods_Prova_Helpie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prova_Helpie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0EBB57F2CE19705E735D448 /* Pods_Prova_Helpie_Prova_HelpieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prova_Helpie_Prova_HelpieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1AC234580A50D7815E0CC78 /* Pods_Prova_Helpie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AD6AEB93FFC7BA2DF06B38 /* Pods_Prova_HelpieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3397E96573865CF54D3C5AE /* Pods_Prova_Helpie_Prova_HelpieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +118,8 @@
 				36A1D96C25487BD000A3ACA2 /* Prova_HelpieTests */,
 				36A1D97725487BD000A3ACA2 /* Prova_HelpieUITests */,
 				36A1D95425487BCB00A3ACA2 /* Products */,
+				FC1D0A76B15FE85AE5830179 /* Pods */,
+				F456574A35AA018A35B424F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,13 +136,14 @@
 		36A1D95525487BCB00A3ACA2 /* Prova_Helpie */ = {
 			isa = PBXGroup;
 			children = (
+				36A1D99D254BE84900A3ACA2 /* Contact Detail */,
+				36A1D98B2548B94C00A3ACA2 /* Contacts LIst */,
 				36A1D998254B2D1800A3ACA2 /* Edit Contact */,
 				36A1D98D2548B96100A3ACA2 /* Extensions */,
 				36A1D98C2548B95600A3ACA2 /* Models */,
-				36A1D98B2548B94C00A3ACA2 /* Contacts LIst */,
 				36A1D9862548B56000A3ACA2 /* Supporting Files */,
 				36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */,
-				36A1D99D254BE84900A3ACA2 /* Contact Detail */,
+				36A1D9A4254CBF7400A3ACA2 /* Local Database */,
 			);
 			path = Prova_Helpie;
 			sourceTree = "<group>";
@@ -200,6 +222,38 @@
 			path = "Contact Detail";
 			sourceTree = "<group>";
 		};
+		36A1D9A4254CBF7400A3ACA2 /* Local Database */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D9A0254CBEEE00A3ACA2 /* RealmService.swift */,
+				36A1D9A2254CBF5300A3ACA2 /* RealmCollectionTypes.swift */,
+			);
+			path = "Local Database";
+			sourceTree = "<group>";
+		};
+		F456574A35AA018A35B424F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E403BB8A4A0C6F36F86CDB27 /* Pods_Prova_Helpie.framework */,
+				F0EBB57F2CE19705E735D448 /* Pods_Prova_Helpie_Prova_HelpieUITests.framework */,
+				A38BC30A2AE3ABFE465DECDD /* Pods_Prova_HelpieTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC1D0A76B15FE85AE5830179 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C45FC3CD9605D5D90ABC0F7 /* Pods-Prova_Helpie.debug.xcconfig */,
+				42B7D43643E5119F44FC18DC /* Pods-Prova_Helpie.release.xcconfig */,
+				D535849118B0DD435B7EB6D1 /* Pods-Prova_Helpie-Prova_HelpieUITests.debug.xcconfig */,
+				688DB972BFC192AD4A4289A7 /* Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig */,
+				D01AE480D16B0674650AE27D /* Pods-Prova_HelpieTests.debug.xcconfig */,
+				1995EF0CE2A3FD372D43A77A /* Pods-Prova_HelpieTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36A1D97D25487BD000A3ACA2 /* Build configuration list for PBXNativeTarget "Prova_Helpie" */;
 			buildPhases = (
+				019601D1DC9C0A9157069FB5 /* [CP] Check Pods Manifest.lock */,
 				36A1D94F25487BCB00A3ACA2 /* Sources */,
 				36A1D95025487BCB00A3ACA2 /* Frameworks */,
 				36A1D95125487BCB00A3ACA2 /* Resources */,
+				BBB29E99F45E0D7EDA1FF654 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,6 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36A1D98025487BD000A3ACA2 /* Build configuration list for PBXNativeTarget "Prova_HelpieTests" */;
 			buildPhases = (
+				179776A879387D8161BEA9CF /* [CP] Check Pods Manifest.lock */,
 				36A1D96525487BD000A3ACA2 /* Sources */,
 				36A1D96625487BD000A3ACA2 /* Frameworks */,
 				36A1D96725487BD000A3ACA2 /* Resources */,
@@ -242,9 +299,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36A1D98325487BD000A3ACA2 /* Build configuration list for PBXNativeTarget "Prova_HelpieUITests" */;
 			buildPhases = (
+				9EB14F2AB72931F8550EAF08 /* [CP] Check Pods Manifest.lock */,
 				36A1D97025487BD000A3ACA2 /* Sources */,
 				36A1D97125487BD000A3ACA2 /* Frameworks */,
 				36A1D97225487BD000A3ACA2 /* Resources */,
+				5461599F2DFAB27325A33CD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,6 +384,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		019601D1DC9C0A9157069FB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prova_Helpie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		179776A879387D8161BEA9CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prova_HelpieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5461599F2DFAB27325A33CD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EB14F2AB72931F8550EAF08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prova_Helpie-Prova_HelpieUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBB29E99F45E0D7EDA1FF654 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36A1D94F25487BCB00A3ACA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -339,9 +501,11 @@
 				36A1D997254B2D0A00A3ACA2 /* EditContactViewController.swift in Sources */,
 				36A1D95725487BCB00A3ACA2 /* AppDelegate.swift in Sources */,
 				36A1D991254A124400A3ACA2 /* ContactTableViewCell.swift in Sources */,
+				36A1D9A1254CBEEF00A3ACA2 /* RealmService.swift in Sources */,
 				36A1D99C254BE83300A3ACA2 /* ContactDetailViewController.swift in Sources */,
 				36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */,
 				36A1D95925487BCB00A3ACA2 /* SceneDelegate.swift in Sources */,
+				36A1D9A3254CBF5300A3ACA2 /* RealmCollectionTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +668,7 @@
 		};
 		36A1D97E25487BD000A3ACA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C45FC3CD9605D5D90ABC0F7 /* Pods-Prova_Helpie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +687,7 @@
 		};
 		36A1D97F25487BD000A3ACA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42B7D43643E5119F44FC18DC /* Pods-Prova_Helpie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +706,7 @@
 		};
 		36A1D98125487BD000A3ACA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01AE480D16B0674650AE27D /* Pods-Prova_HelpieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +729,7 @@
 		};
 		36A1D98225487BD000A3ACA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1995EF0CE2A3FD372D43A77A /* Pods-Prova_HelpieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -584,6 +752,7 @@
 		};
 		36A1D98425487BD000A3ACA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D535849118B0DD435B7EB6D1 /* Pods-Prova_Helpie-Prova_HelpieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -604,6 +773,7 @@
 		};
 		36A1D98525487BD000A3ACA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 688DB972BFC192AD4A4289A7 /* Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

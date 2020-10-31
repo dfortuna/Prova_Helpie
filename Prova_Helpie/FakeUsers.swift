@@ -46,9 +46,10 @@ struct FakeUsers {
             
             let user = User(name: name,
                             phoneNumber: number,
-                            photoURL: url,
+                            photoUrl: url,
                             comments: comments,
                             email: email)
+            
             users.append(user)
         }
         return users

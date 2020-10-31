@@ -24,6 +24,8 @@ class ContactsListTableViewController: UIViewController {
     fileprivate var filteredContacts = [User]()
     
     fileprivate var isSearching = false
+    
+    fileprivate let realmService = RealmService.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +34,6 @@ class ContactsListTableViewController: UIViewController {
         configureTableView()
         setAddContactButton()
         configureSearchController()
-        
-        //tirar
-        loggedUser = User(name: "Denis Fortuna",
-                          phoneNumber: "9999-1234",
-                          photoURL: "www.denisfortuna.com",
-                          comments: "battery about to dye!",
-                          email: "denis.fortuna@gmail.com")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +61,7 @@ class ContactsListTableViewController: UIViewController {
     
     @objc fileprivate func presentAddContactViewController() {
         let newContactVC = EditContactViewController()
-        newContactVC.formatUI(forUser: nil)
+        newContactVC.userToEdit = nil
         
         let newContactNavigationController = UINavigationController()
         newContactNavigationController.viewControllers = [newContactVC]
@@ -82,7 +77,11 @@ class ContactsListTableViewController: UIViewController {
     }
     
     fileprivate func fetchData() {
-        contacts = FakeUsers.getUsers()
+        
+        guard let contactList = realmService.fecthAllObjects(fromCollection: .user) as? [User] else { return }
+        contacts = contactList
+    
+//        contacts = FakeUsers.getUsers()
         sortFormatResults()
         formatResultData()
     }

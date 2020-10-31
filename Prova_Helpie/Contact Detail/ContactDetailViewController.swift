@@ -36,7 +36,7 @@ class ContactDetailViewController: UIViewController {
     
     @objc fileprivate func updateDataBaseViewController() {
         let editContactVC = EditContactViewController()
-        editContactVC.formatUI(forUser: user)
+        editContactVC.userToEdit = user
         
         let editNavigationController = UINavigationController()
         editNavigationController.viewControllers = [editContactVC]
@@ -67,7 +67,6 @@ class ContactDetailViewController: UIViewController {
                              right: self.view.safeAreaLayoutGuide.rightAnchor,
                              bottom: nil,
                              padding: .init(top: 25, left: 12, bottom: 0, right: -12))
-        userName.backgroundColor = .yellow
         userName.forTitle("Name")
         userName.addBorderToBottom()
     }
@@ -108,7 +107,7 @@ class ContactDetailViewController: UIViewController {
                              bottom: nil,
                              padding: .init(top: 16, left: 8, bottom: 0, right: -12))
         comments.textColor = .lightGray
-        comments.isEditable = false
+        comments.isUserInteractionEnabled = false
     }
     
     func formatUI(forUser user: User) {

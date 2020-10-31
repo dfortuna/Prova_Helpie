@@ -21,9 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        
-        // TODO: Call Login screen flow here and retrive real logged User name.
         let mainViewController = ContactsListTableViewController()
+        
+        // TODO: Call Login screen flow here and retrive real logged user data.
+        mainViewController.loggedUser =  User(name: "Denis Fortuna",
+                                              phoneNumber: "9999-1234",
+                                              photoUrl: "www.denisfortuna.com",
+                                              comments: "battery about to dye!",
+                                              email: "denis.fortuna@gmail.com")
+        
         let navigationController = UINavigationController()
         navigationController.viewControllers = [mainViewController]
         window?.rootViewController = navigationController
