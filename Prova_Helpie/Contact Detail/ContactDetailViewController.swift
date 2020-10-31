@@ -10,7 +10,7 @@ import UIKit
 
 class ContactDetailViewController: UIViewController {
     
-    fileprivate var user: User?
+    var user: User?
     fileprivate var userPhoto = UIImageView()
     
     fileprivate var userName = UILabel()
@@ -29,6 +29,10 @@ class ContactDetailViewController: UIViewController {
         configureNotes()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        formatUI()
+    }
+    
     fileprivate func setDoneRightButton() {
         let addContactButton = UIBarButtonItem(title: "Edit", style: .done, target: self, action: #selector(updateDataBaseViewController))
         self.navigationItem.rightBarButtonItem = addContactButton
@@ -40,6 +44,7 @@ class ContactDetailViewController: UIViewController {
         
         let editNavigationController = UINavigationController()
         editNavigationController.viewControllers = [editContactVC]
+        editNavigationController.modalPresentationStyle = .fullScreen
         self.present(editNavigationController, animated: true, completion: nil)
     }
     
@@ -110,14 +115,11 @@ class ContactDetailViewController: UIViewController {
         comments.isUserInteractionEnabled = false
     }
     
-    func formatUI(forUser user: User) {
-        self.user = user
-        print(user)
+    fileprivate func formatUI() {
+        guard let user = user else { return }
         userName.text = user.name
         userPhoneNumber.text = user.phoneNumber
         userEmail.text = user.email
         comments.text = user.comments
     }
 }
-
-

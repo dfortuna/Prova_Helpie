@@ -65,6 +65,7 @@ class ContactsListTableViewController: UIViewController {
         
         let newContactNavigationController = UINavigationController()
         newContactNavigationController.viewControllers = [newContactVC]
+        newContactNavigationController.modalPresentationStyle = .fullScreen
         self.present(newContactNavigationController, animated: true, completion: nil)
     }
     
@@ -151,7 +152,7 @@ extension ContactsListTableViewController: UITableViewDelegate {
             selectedUser = user
         }
         let detailVC = ContactDetailViewController()
-        detailVC.formatUI(forUser: selectedUser)
+        detailVC.user = selectedUser
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
@@ -207,8 +208,40 @@ extension ContactsListTableViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            //Delete user from array
+            let section = sectionTitles[indexPath.section]
+            guard let sectionUsers = groupedContacts[section] else { return }
+            let userToDelete = sectionUsers[indexPath.row]
+            let filteredUsers = sectionUsers.filter{ $0.name != userToDelete.name }
+            groupedContacts[section] = filteredUsers
+            
+            //Delete user from local database
+            realmService.delete(userToDelete)
+            
+            //Check if there are more users in the same section
+            let rowInSection = tableView.numberOfRows(inSection: indexPath.section)
+            if rowInSection > 1 {
+                // if so, delete only the user's cell
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } else {
+                //if not, delete the whole section
+                sectionTitles.remove(at: indexPath.section)
+                tableView.deleteSections(IndexSet([indexPath.section]), with: .fade)
+            }
+        }
     }
 }
 
