@@ -17,5 +17,6 @@ target 'Prova_Helpie' do
   end
 
   pod 'RealmSwift'
+  pod 'Firebase/Storage'
 
 end

@@ -20,6 +20,7 @@ class EditContactViewController: UIViewController {
     fileprivate var comments = UITextView()
     
     fileprivate let realmService = RealmService.shared
+    fileprivate let storageService = StorageService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +62,11 @@ class EditContactViewController: UIViewController {
     }
     
     fileprivate func setDoneRightButton() {
-        let addDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(updateDataBaseViewController))
+        let addDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
         self.navigationItem.rightBarButtonItem = addDoneButton
     }
     
-    @objc fileprivate func updateDataBaseViewController() {
-
+    @objc fileprivate func doneButtonAction() {
         guard let uName = userName.text,
               let uPhone = userPhoneNumber.text,
               let uEmail = userEmail.text,
@@ -74,26 +74,55 @@ class EditContactViewController: UIViewController {
               // TODO: add alert(Fill all fields)
               return
         }
-        
         if let editedUser = userToEdit {
-            //edit user data
-            let userData: [String: Any?] = ["name": uName,
-                                            "phoneNumber": uPhone,
-                                            "photoURL": uphoto,
-                                            "comments": comments.text,
-                                            "email": uEmail]
-            realmService.update(editedUser, with: userData)
+            saveEditedUserData(uName, uPhone, uphoto, uEmail, editedUser)
         } else {
-            //format new user
-            let newUser = User(name: uName,
-                               phoneNumber: uPhone,
-                               photoUrl: uphoto,
-                               comments: comments.text,
-                               email: uEmail)
-            realmService.addObject(newUser)
+            saveNewUserData(uName, uPhone, uphoto, uEmail)
         }
-        // TODO: Alert(success)
-        dismissViewController()
+    }
+    
+    fileprivate func saveEditedUserData(_ uName: String, _ uPhone: String, _ uphoto: String, _ uEmail: String, _ editedUser: User) {
+        // format edited user data:
+        let userData: [String: Any?] = ["name": uName,
+                                        "phoneNumber": uPhone,
+                                        "photoURL": uphoto,
+                                        "comments": comments.text,
+                                        "email": uEmail]
+        // add/update photo to server and get its new url
+        uploadPhoto(photo: userPhoto.image, forUserID: editedUser.id) { [weak self] (result) in
+            switch result {
+            case .success(let photoURL):
+                editedUser.photoURL = photoURL
+                //save user locally
+                self?.realmService.update(editedUser, with: userData)
+                // TODO: Alert(success)
+            case .failure(let error):
+                print(error)
+            }
+            self?.dismissViewController()
+        }
+    }
+    
+    fileprivate func saveNewUserData(_ uName: String, _ uPhone: String, _ uphoto: String, _ uEmail: String) {
+        //format new user
+        let newUser = User(name: uName,
+                           phoneNumber: uPhone,
+                           photoUrl: uphoto,
+                           comments: comments.text,
+                           email: uEmail)
+        // add photo to server and get its new url
+        uploadPhoto(photo: userPhoto.image, forUserID: newUser.id) { [weak self] (result) in
+            switch result {
+            case .success(let photoURL):
+                newUser.photoURL = photoURL
+                // save user locally
+                self?.realmService.addObject(newUser)
+                // TODO: Alert(success)
+            case .failure(let error):
+                print(error)
+            }
+            self?.dismissViewController()
+        }
     }
     
     fileprivate func configureUserPhoto() {
@@ -130,6 +159,23 @@ class EditContactViewController: UIViewController {
         myPickerController.sourceType = .photoLibrary
         myPickerController.allowsEditing = true
         self.present(myPickerController, animated: true, completion: nil)
+    }
+    
+    fileprivate func uploadPhoto(photo: UIImage?,
+                                 forUserID userID: String,
+                                 callback: @escaping (Result<String, HError>) -> ()) {
+        //after Done button is pressed, access server to upload profile photo, returning photo url
+        guard let photo = photo else { return }
+        storageService.uploadImage(image: photo, toURL: .userProfilePhoto(userID: userID)) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let photoURL):
+                    callback(.success(photoURL))
+                case .failure(let error):
+                    callback(.failure(error))
+                }
+            }
+        }
     }
     
     fileprivate func configureUserName() {

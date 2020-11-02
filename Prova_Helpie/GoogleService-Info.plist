@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>320688294014-9re07utl28uck7app9oeco6fs54dfkr4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.320688294014-9re07utl28uck7app9oeco6fs54dfkr4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC2pGkRxBdI1kVumFV9sG4rXP-YnAOoQUA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>320688294014</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>None.Prova-Helpie</string>
+	<key>PROJECT_ID</key>
+	<string>prova-helpie</string>
+	<key>STORAGE_BUCKET</key>
+	<string>prova-helpie.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:320688294014:ios:75763433c6b47d20c7702f</string>
+	<key>DATABASE_URL</key>
+	<string>https://prova-helpie.firebaseio.com</string>
+</dict>
+</plist>

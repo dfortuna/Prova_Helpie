@@ -25,6 +25,10 @@
 		36A1D99F254BF8B400A3ACA2 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D99E254BF8B400A3ACA2 /* UILabel + Extensions.swift */; };
 		36A1D9A1254CBEEF00A3ACA2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A0254CBEEE00A3ACA2 /* RealmService.swift */; };
 		36A1D9A3254CBF5300A3ACA2 /* RealmCollectionTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A2254CBF5300A3ACA2 /* RealmCollectionTypes.swift */; };
+		36A1D9A6254DC88400A3ACA2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36A1D9A5254DC88400A3ACA2 /* GoogleService-Info.plist */; };
+		36A1D9A8254DD36000A3ACA2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A7254DD36000A3ACA2 /* StorageService.swift */; };
+		36A1D9AA254DEBBC00A3ACA2 /* HError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A9254DEBBC00A3ACA2 /* HError.swift */; };
+		36A1D9AD254FA2D400A3ACA2 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9AC254FA2D400A3ACA2 /* FirebaseCollectionReference.swift */; };
 		44AD6AEB93FFC7BA2DF06B38 /* Pods_Prova_HelpieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38BC30A2AE3ABFE465DECDD /* Pods_Prova_HelpieTests.framework */; };
 		A1AC234580A50D7815E0CC78 /* Pods_Prova_Helpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E403BB8A4A0C6F36F86CDB27 /* Pods_Prova_Helpie.framework */; };
 		D3397E96573865CF54D3C5AE /* Pods_Prova_Helpie_Prova_HelpieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EBB57F2CE19705E735D448 /* Pods_Prova_Helpie_Prova_HelpieUITests.framework */; };
@@ -73,6 +77,10 @@
 		36A1D99E254BF8B400A3ACA2 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		36A1D9A0254CBEEE00A3ACA2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		36A1D9A2254CBF5300A3ACA2 /* RealmCollectionTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCollectionTypes.swift; sourceTree = "<group>"; };
+		36A1D9A5254DC88400A3ACA2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36A1D9A7254DD36000A3ACA2 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		36A1D9A9254DEBBC00A3ACA2 /* HError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HError.swift; sourceTree = "<group>"; };
+		36A1D9AC254FA2D400A3ACA2 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		42B7D43643E5119F44FC18DC /* Pods-Prova_Helpie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie.release.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie.release.xcconfig"; sourceTree = "<group>"; };
 		688DB972BFC192AD4A4289A7 /* Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6C45FC3CD9605D5D90ABC0F7 /* Pods-Prova_Helpie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie.debug.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 		36A1D95525487BCB00A3ACA2 /* Prova_Helpie */ = {
 			isa = PBXGroup;
 			children = (
+				36A1D9A5254DC88400A3ACA2 /* GoogleService-Info.plist */,
 				36A1D99D254BE84900A3ACA2 /* Contact Detail */,
 				36A1D98B2548B94C00A3ACA2 /* Contacts LIst */,
 				36A1D998254B2D1800A3ACA2 /* Edit Contact */,
@@ -143,7 +152,7 @@
 				36A1D98C2548B95600A3ACA2 /* Models */,
 				36A1D9862548B56000A3ACA2 /* Supporting Files */,
 				36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */,
-				36A1D9A4254CBF7400A3ACA2 /* Local Database */,
+				36A1D9AB254FA29F00A3ACA2 /* Database */,
 			);
 			path = Prova_Helpie;
 			sourceTree = "<group>";
@@ -229,6 +238,25 @@
 				36A1D9A2254CBF5300A3ACA2 /* RealmCollectionTypes.swift */,
 			);
 			path = "Local Database";
+			sourceTree = "<group>";
+		};
+		36A1D9AB254FA29F00A3ACA2 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D9A4254CBF7400A3ACA2 /* Local Database */,
+				36A1D9AE254FA38000A3ACA2 /* Remote Database */,
+				36A1D9A9254DEBBC00A3ACA2 /* HError.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		36A1D9AE254FA38000A3ACA2 /* Remote Database */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D9A7254DD36000A3ACA2 /* StorageService.swift */,
+				36A1D9AC254FA2D400A3ACA2 /* FirebaseCollectionReference.swift */,
+			);
+			path = "Remote Database";
 			sourceTree = "<group>";
 		};
 		F456574A35AA018A35B424F5 /* Frameworks */ = {
@@ -365,6 +393,7 @@
 			files = (
 				36A1D96325487BD000A3ACA2 /* LaunchScreen.storyboard in Resources */,
 				36A1D96025487BD000A3ACA2 /* Assets.xcassets in Resources */,
+				36A1D9A6254DC88400A3ACA2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A1D98A2548B91800A3ACA2 /* UIView + Extensions.swift in Sources */,
+				36A1D9AD254FA2D400A3ACA2 /* FirebaseCollectionReference.swift in Sources */,
 				36A1D9882548B6F700A3ACA2 /* User.swift in Sources */,
 				36A1D99F254BF8B400A3ACA2 /* UILabel + Extensions.swift in Sources */,
 				36A1D95B25487BCB00A3ACA2 /* ContactsListTableViewController.swift in Sources */,
@@ -501,7 +531,9 @@
 				36A1D997254B2D0A00A3ACA2 /* EditContactViewController.swift in Sources */,
 				36A1D95725487BCB00A3ACA2 /* AppDelegate.swift in Sources */,
 				36A1D991254A124400A3ACA2 /* ContactTableViewCell.swift in Sources */,
+				36A1D9AA254DEBBC00A3ACA2 /* HError.swift in Sources */,
 				36A1D9A1254CBEEF00A3ACA2 /* RealmService.swift in Sources */,
+				36A1D9A8254DD36000A3ACA2 /* StorageService.swift in Sources */,
 				36A1D99C254BE83300A3ACA2 /* ContactDetailViewController.swift in Sources */,
 				36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */,
 				36A1D95925487BCB00A3ACA2 /* SceneDelegate.swift in Sources */,
