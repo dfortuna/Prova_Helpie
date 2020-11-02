@@ -12,7 +12,6 @@ class ContactDetailViewController: UIViewController {
     
     var user: User?
     fileprivate var userPhoto = UIImageView()
-    
     fileprivate var userName = UILabel()
     fileprivate var userPhoneNumber = UILabel()
     fileprivate var userEmail = UILabel()
@@ -50,7 +49,7 @@ class ContactDetailViewController: UIViewController {
     
     fileprivate func configureUserPhoto() {
         view.addSubview(userPhoto)
-        userPhoto.backgroundColor = .lightGray
+//        userPhoto.backgroundColor = .lightGray
         userPhoto.layer.cornerRadius = 65
         userPhoto.contentMode = .scaleAspectFill
         userPhoto.clipsToBounds = true
@@ -121,5 +120,6 @@ class ContactDetailViewController: UIViewController {
         userPhoneNumber.text = user.phoneNumber
         userEmail.text = user.email
         comments.text = user.comments
+        userPhoto.load(urlString: user.photoURL, radious: 65)
     }
 }

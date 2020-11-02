@@ -26,7 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // TODO: Call Login screen flow here and retrive real logged user data.
         mainViewController.loggedUser =  User(name: "Denis Fortuna",
                                               phoneNumber: "9999-1234",
-                                              photoUrl: "www.denisfortuna.com",
+                                              photoUrl: "https://firebasestorage.googleapis.com/v0",
+//                                              photoUrl:  "https://firebasestorage.googleapis.com/v0/b/prova-helpie.appspot.com/o/Users%2F565AFF28-B476-4039-96A2-C30A200E39D1.png?alt=media&token=ea1f8efc-222e-4e19-bf14-53b4e1ad31c0",
                                               comments: "battery about to dye!",
                                               email: "denis.fortuna@gmail.com")
         

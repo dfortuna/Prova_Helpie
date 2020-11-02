@@ -29,11 +29,8 @@ class LoggedUserTableViewCell: UITableViewCell {
     
     fileprivate func configureContactPhoto() {
         self.addSubview(contactPhoto)
-        contactPhoto.backgroundColor = .lightGray
         contactPhoto.anchorSizes(sizeWidth: 70, sizeHeight: 70)
         contactPhoto.layer.cornerRadius = 35
-        contactPhoto.layer.borderColor = UIColor.blue.cgColor
-        contactPhoto.layer.borderWidth = 5
         contactPhoto.contentMode = .scaleAspectFill
         contactPhoto.clipsToBounds = true
         contactPhoto.anchorEdges(top: self.topAnchor,
@@ -72,5 +69,6 @@ class LoggedUserTableViewCell: UITableViewCell {
         loggedUser = user
         contactName.text = user.name
         messageLabel.text = user.comments
+        contactPhoto.load(urlString: user.photoURL, radious: 35)
     }
 }

@@ -34,10 +34,12 @@ PODS:
   - Realm/Headers (5.4.8)
   - RealmSwift (5.4.8):
     - Realm (= 5.4.8)
+  - SkeletonView (1.10.0)
 
 DEPENDENCIES:
   - Firebase/Storage
   - RealmSwift
+  - SkeletonView
 
 SPEC REPOS:
   trunk:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - PromisesObjC
     - Realm
     - RealmSwift
+    - SkeletonView
 
 SPEC CHECKSUMS:
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
@@ -65,7 +68,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   Realm: 042bbb59227a0159eda397b8a5a49fbd67495ce7
   RealmSwift: 15ddd6b3398ebfc99810811c44f095df1313adb3
+  SkeletonView: 14fbe9702c7fb5c5f011b44ac3ae99fc73155726
 
-PODFILE CHECKSUM: e1821cf952c3a6448920c25538d5344e2a0c6c95
+PODFILE CHECKSUM: 79522528d5bfccb4678ba095db34ea6f39e83a7b
 
 COCOAPODS: 1.9.1

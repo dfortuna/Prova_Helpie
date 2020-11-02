@@ -29,6 +29,8 @@
 		36A1D9A8254DD36000A3ACA2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A7254DD36000A3ACA2 /* StorageService.swift */; };
 		36A1D9AA254DEBBC00A3ACA2 /* HError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9A9254DEBBC00A3ACA2 /* HError.swift */; };
 		36A1D9AD254FA2D400A3ACA2 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9AC254FA2D400A3ACA2 /* FirebaseCollectionReference.swift */; };
+		36A1D9B0254FFCE600A3ACA2 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9AF254FFCE500A3ACA2 /* UIImageView+Extensions.swift */; };
+		36A1D9B2254FFD3C00A3ACA2 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1D9B1254FFD3C00A3ACA2 /* Icons.swift */; };
 		44AD6AEB93FFC7BA2DF06B38 /* Pods_Prova_HelpieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38BC30A2AE3ABFE465DECDD /* Pods_Prova_HelpieTests.framework */; };
 		A1AC234580A50D7815E0CC78 /* Pods_Prova_Helpie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E403BB8A4A0C6F36F86CDB27 /* Pods_Prova_Helpie.framework */; };
 		D3397E96573865CF54D3C5AE /* Pods_Prova_Helpie_Prova_HelpieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0EBB57F2CE19705E735D448 /* Pods_Prova_Helpie_Prova_HelpieUITests.framework */; };
@@ -81,6 +83,8 @@
 		36A1D9A7254DD36000A3ACA2 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		36A1D9A9254DEBBC00A3ACA2 /* HError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HError.swift; sourceTree = "<group>"; };
 		36A1D9AC254FA2D400A3ACA2 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
+		36A1D9AF254FFCE500A3ACA2 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		36A1D9B1254FFD3C00A3ACA2 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		42B7D43643E5119F44FC18DC /* Pods-Prova_Helpie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie.release.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie.release.xcconfig"; sourceTree = "<group>"; };
 		688DB972BFC192AD4A4289A7 /* Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie-Prova_HelpieUITests/Pods-Prova_Helpie-Prova_HelpieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6C45FC3CD9605D5D90ABC0F7 /* Pods-Prova_Helpie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prova_Helpie.debug.xcconfig"; path = "Target Support Files/Pods-Prova_Helpie/Pods-Prova_Helpie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,8 +155,8 @@
 				36A1D98D2548B96100A3ACA2 /* Extensions */,
 				36A1D98C2548B95600A3ACA2 /* Models */,
 				36A1D9862548B56000A3ACA2 /* Supporting Files */,
-				36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */,
 				36A1D9AB254FA29F00A3ACA2 /* Database */,
+				36A1D9B325500ED100A3ACA2 /* Theme */,
 			);
 			path = Prova_Helpie;
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 		36A1D9862548B56000A3ACA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36A1D992254A1DC400A3ACA2 /* FakeUsers.swift */,
 				36A1D95625487BCB00A3ACA2 /* AppDelegate.swift */,
 				36A1D95825487BCB00A3ACA2 /* SceneDelegate.swift */,
 				36A1D95F25487BD000A3ACA2 /* Assets.xcassets */,
@@ -211,6 +216,7 @@
 				36A1D9892548B91800A3ACA2 /* UIView + Extensions.swift */,
 				36A1D999254B8F9400A3ACA2 /* UITextView + Extensions.swift */,
 				36A1D99E254BF8B400A3ACA2 /* UILabel + Extensions.swift */,
+				36A1D9AF254FFCE500A3ACA2 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,6 +263,14 @@
 				36A1D9AC254FA2D400A3ACA2 /* FirebaseCollectionReference.swift */,
 			);
 			path = "Remote Database";
+			sourceTree = "<group>";
+		};
+		36A1D9B325500ED100A3ACA2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				36A1D9B1254FFD3C00A3ACA2 /* Icons.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		F456574A35AA018A35B424F5 /* Frameworks */ = {
@@ -533,9 +547,11 @@
 				36A1D991254A124400A3ACA2 /* ContactTableViewCell.swift in Sources */,
 				36A1D9AA254DEBBC00A3ACA2 /* HError.swift in Sources */,
 				36A1D9A1254CBEEF00A3ACA2 /* RealmService.swift in Sources */,
+				36A1D9B0254FFCE600A3ACA2 /* UIImageView+Extensions.swift in Sources */,
 				36A1D9A8254DD36000A3ACA2 /* StorageService.swift in Sources */,
 				36A1D99C254BE83300A3ACA2 /* ContactDetailViewController.swift in Sources */,
 				36A1D98F2549CE8400A3ACA2 /* LoggedUserTableViewCell.swift in Sources */,
+				36A1D9B2254FFD3C00A3ACA2 /* Icons.swift in Sources */,
 				36A1D95925487BCB00A3ACA2 /* SceneDelegate.swift in Sources */,
 				36A1D9A3254CBF5300A3ACA2 /* RealmCollectionTypes.swift in Sources */,
 			);

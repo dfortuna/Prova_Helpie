@@ -11,7 +11,6 @@ import UIKit
 class EditContactViewController: UIViewController {
     
     var userToEdit: User?
-    fileprivate var photoURL: String? = ""
     fileprivate var userPhoto = UIImageView()
     fileprivate var changePhotoBottom = UIButton()
     fileprivate var userName = UITextField()
@@ -21,7 +20,7 @@ class EditContactViewController: UIViewController {
     
     fileprivate let realmService = RealmService.shared
     fileprivate let storageService = StorageService.shared
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -34,7 +33,7 @@ class EditContactViewController: UIViewController {
         configureUserEmail()
         configureNotes()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         formatUI()
     }
@@ -46,9 +45,12 @@ class EditContactViewController: UIViewController {
             userPhoneNumber.text = user.phoneNumber
             userEmail.text = user.email
             comments.text = user.comments
+            userPhoto.load(urlString: user.photoURL, radious: 65)
         } else {
             self.title = "New Contact"
-            userPhoto.image = UIImage(systemName: "photo")
+            userPhoto.image = Icons.imageNotFound.image
+            userPhoto.layer.borderWidth = 1
+            userPhoto.layer.borderColor = UIColor.lightGray.cgColor
         }
     }
     
@@ -69,30 +71,29 @@ class EditContactViewController: UIViewController {
     @objc fileprivate func doneButtonAction() {
         guard let uName = userName.text,
               let uPhone = userPhoneNumber.text,
-              let uEmail = userEmail.text,
-              let uphoto = photoURL else {
+              let uEmail = userEmail.text else {
               // TODO: add alert(Fill all fields)
               return
         }
         if let editedUser = userToEdit {
-            saveEditedUserData(uName, uPhone, uphoto, uEmail, editedUser)
+            saveEditedUserData(uName, uPhone, uEmail, editedUser)
         } else {
-            saveNewUserData(uName, uPhone, uphoto, uEmail)
+            saveNewUserData(uName, uPhone, uEmail)
         }
     }
     
-    fileprivate func saveEditedUserData(_ uName: String, _ uPhone: String, _ uphoto: String, _ uEmail: String, _ editedUser: User) {
-        // format edited user data:
-        let userData: [String: Any?] = ["name": uName,
-                                        "phoneNumber": uPhone,
-                                        "photoURL": uphoto,
-                                        "comments": comments.text,
-                                        "email": uEmail]
+    fileprivate func saveEditedUserData(_ uName: String, _ uPhone: String, _ uEmail: String, _ editedUser: User) {
         // add/update photo to server and get its new url
         uploadPhoto(photo: userPhoto.image, forUserID: editedUser.id) { [weak self] (result) in
             switch result {
             case .success(let photoURL):
-                editedUser.photoURL = photoURL
+
+                // format edited user data:
+                let userData: [String: Any?] = ["name": uName,
+                                                "phoneNumber": uPhone,
+                                                "photoURL": photoURL,
+                                                "comments": self!.comments.text,
+                                                "email": uEmail]
                 //save user locally
                 self?.realmService.update(editedUser, with: userData)
                 // TODO: Alert(success)
@@ -103,11 +104,11 @@ class EditContactViewController: UIViewController {
         }
     }
     
-    fileprivate func saveNewUserData(_ uName: String, _ uPhone: String, _ uphoto: String, _ uEmail: String) {
+    fileprivate func saveNewUserData(_ uName: String, _ uPhone: String, _ uEmail: String) {
         //format new user
         let newUser = User(name: uName,
                            phoneNumber: uPhone,
-                           photoUrl: uphoto,
+                           photoUrl: "",
                            comments: comments.text,
                            email: uEmail)
         // add photo to server and get its new url
@@ -127,9 +128,8 @@ class EditContactViewController: UIViewController {
     
     fileprivate func configureUserPhoto() {
         view.addSubview(userPhoto)
-        userPhoto.backgroundColor = .lightGray
         userPhoto.layer.cornerRadius = 65
-        userPhoto.contentMode = .scaleAspectFill
+        userPhoto.contentMode = .center
         userPhoto.clipsToBounds = true
         userPhoto.anchorSizes(sizeWidth: 130, sizeHeight: 130)
         userPhoto.anchorEdges(top: self.view.safeAreaLayoutGuide.topAnchor,
@@ -227,7 +227,7 @@ class EditContactViewController: UIViewController {
                              bottom: nil,
                              padding: .init(top: 16, left: 8, bottom: 0, right: -12))
         comments.delegate = self
-        comments.textColor = .systemGray3
+        comments.textColor = .lightGray
         comments.backgroundColor = .systemGray5
         comments.text = "Notes"
     }

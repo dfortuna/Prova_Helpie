@@ -18,5 +18,6 @@ target 'Prova_Helpie' do
 
   pod 'RealmSwift'
   pod 'Firebase/Storage'
+  pod 'SkeletonView'
 
 end

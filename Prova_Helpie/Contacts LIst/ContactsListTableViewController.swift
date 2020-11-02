@@ -37,6 +37,7 @@ class ContactsListTableViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        
         fetchData()
     }
     

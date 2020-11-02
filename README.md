@@ -4,7 +4,9 @@ Prova_Helpie is an iOS application developed using Swift as an attempt to the He
 
 
 ## Libraries
-
+*  [Realm](https://realm.io/docs/swift/latest/)
+*  [Firebase/Storage](https://firebase.google.com)
+*  [SkeletonView](https://github.com/Juanpe/SkeletonView)
 
 ## Requiriments
 *  iOS 13
